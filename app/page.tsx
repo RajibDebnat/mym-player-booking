@@ -77,7 +77,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 
         <div className="grid grid-cols-1 gap-4">
           <div>
-            <label className="font-semibold text-[#efe006]">Player Name</label>
+            <label className="font-semibold text-[#caae01]">Player Name</label>
             <input
               name="playerName"
               value={form.playerName}
@@ -89,7 +89,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
           </div>
 
           <div>
-            <label className="font-semibold text-[#efe006]">Contact Number</label>
+            <label className="font-semibold text-[#caae01]">Contact Number</label>
             <input
               name="contactNumber"
               type="tel"
@@ -102,7 +102,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
           </div>
 
           <div>
-            <label className="font-semibold text-[#efe006]">Select Role</label>
+            <label className="font-semibold text-[#caae01]">Select Role</label>
             <select
             title='Select Role'
               name="role"
@@ -119,7 +119,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
           </div>
 
           <div>
-            <label className="font-semibold text-[#efe006]">Date of Joining</label>
+            <label className="font-semibold text-[#caae01]">Date of Joining</label>
             <input
             title='Date of Joining'
               name="dateOfJoining"
@@ -132,7 +132,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 
           <div className="grid grid-cols-1 gap-4 ">
             <div>
-              <label className="font-semibold text-[#efe006]">Game</label>
+              <label className="font-semibold text-[#caae01]">Game</label>
               <input
                 title='Game'
                 name="gameName"
@@ -142,7 +142,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
               />
             </div>
             <div>
-              <label className="font-semibold  text-[#efe006]  ">Club</label>
+              <label className="font-semibold  text-[#caae01]  ">Club</label>
               <input
                 title='Club'
                 name="clubName"
