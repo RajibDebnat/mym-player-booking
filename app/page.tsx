@@ -77,7 +77,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 
         <div className="grid grid-cols-1 gap-4">
           <div>
-            <label className="font-semibold">Player Name</label>
+            <label className="font-semibold text-[#efe006]">Player Name</label>
             <input
               name="playerName"
               value={form.playerName}
@@ -89,7 +89,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
           </div>
 
           <div>
-            <label className="font-semibold">Contact Number</label>
+            <label className="font-semibold text-[#efe006]">Contact Number</label>
             <input
               name="contactNumber"
               type="tel"
@@ -102,7 +102,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
           </div>
 
           <div>
-            <label className="font-semibold">Select Role</label>
+            <label className="font-semibold text-[#efe006]">Select Role</label>
             <select
             title='Select Role'
               name="role"
@@ -119,7 +119,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
           </div>
 
           <div>
-            <label className="font-semibold">Date of Joining</label>
+            <label className="font-semibold text-[#efe006]">Date of Joining</label>
             <input
             title='Date of Joining'
               name="dateOfJoining"
@@ -132,7 +132,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 
           <div className="grid grid-cols-1 gap-4 ">
             <div>
-              <label className="font-semibold">Game</label>
+              <label className="font-semibold text-[#efe006]">Game</label>
               <input
                 title='Game'
                 name="gameName"
@@ -142,7 +142,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
               />
             </div>
             <div>
-              <label className="font-semibold   ">Club</label>
+              <label className="font-semibold  text-[#efe006]  ">Club</label>
               <input
                 title='Club'
                 name="clubName"
@@ -171,8 +171,8 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     type="submit"
     disabled={submitted}
     className={`w-full ${
-      submitted ? 'bg-gray-400 cursor-not-allowed' : 'bg-[#c09c06] hover:bg-yellow-600'
-    } text-white font-bold py-2 rounded-xl`}
+      submitted ? 'bg-gray-400 cursor-not-allowed' : 'bg-[#efe006] hover:bg-yellow-600 '
+    } text-black cursor-pointer font-bold py-2 rounded-xl`}
   >
     Book Now
   </button>
@@ -180,12 +180,12 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         <div className="pt-4 border-t mt-6 text-sm">
           <p className="font-semibold mb-2 text-white">For Support:</p>
           <div>
-            <Link href="tel:+919735995321" className="text-white hover:underline flex gap-2" >
+            <Link href="tel:+919735995321" className="text-[#c09c06] hover:underline flex gap-2" >
              <span className=' text-2xl '><BsTelephoneFill/> </span> <span className='text-lg font-semibold'>Vichar – 97359 95321</span>
             
             </Link>
             <br />
-            <Link href="tel:+917551037762" className="text-white hover:underline flex gap-2">
+            <Link href="tel:+917551037762" className="text-[#c09c06] hover:underline flex gap-2">
               <span className=' text-2xl'><BsTelephoneFill/> </span > <span className=' text-lg font-semibold'> Lokesh – 75510 37762</span> 
             </Link>
           </div>
