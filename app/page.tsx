@@ -200,8 +200,8 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         <div className="pt-2 border-t mt-0 text-sm">
           <p className="font-semibold mb-2 text-black">Contact Support:</p>
           <div>
-            <Link href="tel:+919735995321" className="text-black hover:underline flex gap-2" >
-             <span className=' text-2xl '><BsTelephoneFill/> </span> <span className='text-lg font-semibold'>Vichar – 97359 95321</span>
+            <Link href="tel:+919735995321" className="text-black hover:underline flex gap-1" >
+             <span className=' text-2xl '><BsTelephoneFill/> </span> <span className='text-lg font-semibold'>Vichar –  97359 95321</span>
             
             </Link>
             <br />
