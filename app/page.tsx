@@ -71,9 +71,29 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         onSubmit={handleSubmit}
         className="bg-white  rounded-2xl shadow-2xl p-8 pt-10 max-w-xl w-full space-y-6"
       >
-        <h1 className="text-3xl uppercase font-extrabold text-center  text-[#0269a9] max-sm:text-xl ">
-         Secure Your Spot
-        </h1>
+       <h1 className="text-3xl uppercase font-extrabold text-center text-[#0269a9] max-sm:text-xl flex flex-col items-center gap-2 sm:flex-row sm:justify-center sm:gap-4">
+  {/* Logo 1 */}
+  <div className="relative max-sm:w-14  max-sm:h-14 w-12 h-12  ">
+    <Image
+      src="/logo1.png" // Replace with your actual logo path
+      alt="Logo 1"
+      fill
+      className="object-contain"
+    />
+  </div>
+
+  Secure Your Spot
+
+  {/* Logo 2 */}
+  <div className="relative max-sm:w-14  max-sm:h-14 w-12 h-12 ">
+    <Image
+      src="/logo2.png" // Replace with your actual logo path
+      alt="Logo 2"
+      fill
+      className="object-contain"
+    />
+  </div>
+</h1>
 
         <div className="grid grid-cols-1 gap-4">
           <div>
@@ -193,7 +213,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
        
       </form>
   <Image src="/bg.jpg" width={900} height={900} alt="volleyball   team registration image" className="absolute top-0 right-0 w-full -z-10 object-fill    h-[120vh] " />
-  <Image src="/logo2.png" width={150} height={150} alt="volleyball   team registration image" className="absolute   top-4 left-6   max-sm:hidden" />
+  {/* <Image src="/logo2.png" width={150} height={150} alt="volleyball   team registration image" className="absolute   top-4 left-6   max-sm:hidden" /> */}
     
     </main>
   )
