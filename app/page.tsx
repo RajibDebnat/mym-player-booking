@@ -5,8 +5,10 @@ import gsap from 'gsap'
 import Link from 'next/link'
 import { FaWhatsapp } from 'react-icons/fa'
 import { BsTelephoneFill } from 'react-icons/bs'
-import {logo1} from '../public/logo1.webp';
-import {logo2} from '../public/logo2.webp';
+import logo1 from '../public/logo1.webp';
+
+import logo2 from '../public/logo1.webp';
+
 const roles = [
   "Outside Hitter (Left-side Hitter)",
   "Opposite Hitter (Right-side Hitter)",
