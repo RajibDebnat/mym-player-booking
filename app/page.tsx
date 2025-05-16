@@ -69,15 +69,15 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
       <form
         ref={formRef}
         onSubmit={handleSubmit}
-        className="bg-transparent  rounded-2xl shadow-2xl p-8 pt-10 max-w-xl w-full space-y-6"
+        className="bg-white  rounded-2xl shadow-2xl p-8 pt-10 max-w-xl w-full space-y-6"
       >
-        <h1 className="text-3xl uppercase font-extrabold text-center  text-white max-sm:text-xl ">
+        <h1 className="text-3xl uppercase font-extrabold text-center  text-[#0269a9] max-sm:text-xl ">
          Secure Your Spot
         </h1>
 
         <div className="grid grid-cols-1 gap-4">
           <div>
-            <label className="font-semibold text-[#caae01]">Player Name</label>
+            <label className="font-semibold text-black">Player Name</label>
             <input
               name="playerName"
               value={form.playerName}
@@ -89,7 +89,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
           </div>
 
           <div>
-            <label className="font-semibold text-[#caae01]">Contact Number</label>
+            <label className="font-semibold text-black">Contact Number</label>
             <input
               name="contactNumber"
               type="tel"
@@ -102,7 +102,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
           </div>
 
           <div>
-            <label className="font-semibold text-[#caae01]">Select Role</label>
+            <label className="font-semibold text-black">Select Role</label>
             <select
             title='Select Role'
               name="role"
@@ -119,7 +119,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
           </div>
 
           <div>
-            <label className="font-semibold text-[#caae01]">Date of Joining</label>
+            <label className="font-semibold text-black">Date of Joining</label>
             <input
             title='Date of Joining'
               name="dateOfJoining"
@@ -132,7 +132,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 
           <div className="grid grid-cols-1 gap-4 ">
             <div>
-              <label className="font-semibold text-[#caae01]">Game</label>
+              <label className="font-semibold text-black">Game</label>
               <input
                 title='Game'
                 name="gameName"
@@ -142,7 +142,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
               />
             </div>
             <div>
-              <label className="font-semibold  text-[#caae01]  ">Club</label>
+              <label className="font-semibold  text-black  ">Club</label>
               <input
                 title='Club'
                 name="clubName"
@@ -177,22 +177,23 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     Book Now
   </button>
 )}
-        <div className="pt-4 border-t mt-6 text-sm">
+        <div className="pt-2 border-t mt-0 text-sm">
           <p className="font-semibold mb-2 text-white">For Support:</p>
           <div>
-            <Link href="tel:+919735995321" className="text-[#c09c06] hover:underline flex gap-2" >
+            <Link href="tel:+919735995321" className="text-black hover:underline flex gap-2" >
              <span className=' text-2xl '><BsTelephoneFill/> </span> <span className='text-lg font-semibold'>Vichar – 97359 95321</span>
             
             </Link>
             <br />
-            <Link href="tel:+917551037762" className="text-[#c09c06] hover:underline flex gap-2">
+            <Link href="tel:+917551037762" className="text-black hover:underline flex gap-2">
               <span className=' text-2xl'><BsTelephoneFill/> </span > <span className=' text-lg font-semibold'> Lokesh – 75510 37762</span> 
             </Link>
           </div>
         </div>
-  <Image src="/bg.webp" width={900} height={900} alt="volleyball   team registration image" className="absolute top-0 right-0 w-full -z-10 object-fill rounded-3xl   h-[110vh] " />
        
       </form>
+  <Image src="/bg.jpg" width={900} height={900} alt="volleyball   team registration image" className="absolute top-0 right-0 w-full -z-10 object-fill    h-[120vh] " />
+  <Image src="/logo2.png" width={150} height={150} alt="volleyball   team registration image" className="absolute   top-4 left-6 " />
     
     </main>
   )
