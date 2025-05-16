@@ -20,8 +20,8 @@ export async function POST(req) {
     });
 
     const mailOptions = {
-      from: 'aureliaabelle7@gmail.com',
-      to: 'rajibfreelancing@gmail.com',
+      from: process.env.EMAIL_USER,
+      to: process.env.EMAIL_TO,
       subject: `New Player Registration - ${playerName}`,
       html: `
         <h2>New Volleyball Player Registration</h2>
