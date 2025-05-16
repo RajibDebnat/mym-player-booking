@@ -5,6 +5,8 @@ import gsap from 'gsap'
 import Link from 'next/link'
 import { FaWhatsapp } from 'react-icons/fa'
 import { BsTelephoneFill } from 'react-icons/bs'
+import {logo1} from '../public/logo1.webp';
+import {logo2} from '../public/logo2.webp';
 const roles = [
   "Outside Hitter (Left-side Hitter)",
   "Opposite Hitter (Right-side Hitter)",
@@ -75,7 +77,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
   {/* Logo 1 */}
   <div className="relative max-sm:w-14  max-sm:h-14 w-12 h-12  ">
     <Image
-      src="/logo1.png" // Replace with your actual logo path
+      src={logo1} // Replace with your actual logo path
       alt="Logo 1"
       fill
       className="object-contain"
@@ -87,7 +89,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
   {/* Logo 2 */}
   <div className="relative max-sm:w-14  max-sm:h-14 w-12 h-12   ">
     <Image
-      src="/logo2.png" // Replace with your actual logo path
+      src={logo2} // Replace with your actual logo path
       alt="Logo 2"
       fill
       className="object-contain"
