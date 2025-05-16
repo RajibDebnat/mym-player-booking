@@ -209,7 +209,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
             
             </Link>
             <br />
-            <Link href="tel:+917551037762" className="text-black hover:underline flex gap-2">
+            <Link href="tel:+917551037762" className="text-black hover:underline flex gap-1">
               <span className=' text-2xl'><BsTelephoneFill/> </span > <span className=' text-lg font-semibold'> Lokesh – 75510 37762</span> 
             </Link>
           </div>
