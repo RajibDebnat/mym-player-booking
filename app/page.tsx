@@ -1,5 +1,5 @@
 'use client'
-
+import Image from 'next/image'
 import React, { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
 import Link from 'next/link'
@@ -65,14 +65,14 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 
 
   return (
-    <main className="min-h-screen bg-[#0f1c2f] flex items-center justify-center p-6 text-[#0f1c2f]">
+    <main className="min-h-screen overflow-y-clip   bg-[#0f1c2f] flex items-center justify-center p-6  text-white">
       <form
         ref={formRef}
         onSubmit={handleSubmit}
-        className="bg-white rounded-2xl shadow-2xl p-8 max-w-xl w-full space-y-6"
+        className="bg-transparent rounded-2xl shadow-2xl p-8 max-w-xl w-full space-y-6"
       >
-        <h1 className="text-3xl font-extrabold text-center max-sm:text-xl text-[#0277ba]">
-          Player Registration Form
+        <h1 className="text-3xl uppercase font-extrabold text-center text-white max-sm:text-xl ">
+         Secured Your Spot
         </h1>
 
         <div className="grid grid-cols-1 gap-4">
@@ -108,10 +108,10 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
               name="role"
               value={form.role}
               onChange={handleChange}
-              className="w-full px-4 py-2 border border-[#0277ba] rounded-xl"
+              className="w-full bg-transparent text-white px-4 py-2 border border-[#0277ba] rounded-xl"
             >
               {roles.map((role, idx) => (
-                <option key={idx} value={role}>
+                <option key={idx} className='text-black bg-transparent' value={role}>
                   {role}
                 </option>
               ))}
@@ -138,17 +138,17 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                 name="gameName"
                 value={form.gameName}
                 readOnly
-                className="w-full px-4 py-2 bg-gray-100 border border-[#0277ba] rounded-xl"
+                className="w-full px-4 py-2 bg-transparent border border-[#0277ba] rounded-xl"
               />
             </div>
             <div>
-              <label className="font-semibold">Club</label>
+              <label className="font-semibold text-black">Club</label>
               <input
                 title='Club'
                 name="clubName"
                 value={form.clubName}
                 readOnly
-                className="w-full px-4 py-2 bg-gray-100 border border-[#0277ba] rounded-xl"
+                className="w-full px-4 py-2 bg-white text-black  border border-[#0277ba] rounded-xl"
               />
             </div>
           </div>
@@ -178,21 +178,22 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
   </button>
 )}
         <div className="pt-4 border-t mt-6 text-sm">
-          <p className="font-semibold mb-2 text-[#0277ba]">For Help:</p>
+          <p className="font-semibold mb-2 text-white">For Support:</p>
           <div>
-            <Link href="tel:+919735995321" className="text-[#0f1c2f] hover:underline flex gap-2" >
+            <Link href="tel:+919735995321" className="text-white hover:underline flex gap-2" >
              <span className=' text-2xl '><BsTelephoneFill/> </span> <span className='text-lg font-semibold'>Vichar – 97359 95321</span>
             
             </Link>
             <br />
-            <Link href="tel:+917551037762" className="text-[#0f1c2f] hover:underline flex gap-2">
+            <Link href="tel:+917551037762" className="text-white hover:underline flex gap-2">
               <span className=' text-2xl'><BsTelephoneFill/> </span > <span className=' text-lg font-semibold'> Lokesh – 75510 37762</span> 
             </Link>
           </div>
         </div>
-
+  <Image src="/bg.webp" width={900} height={900} alt="volleyball   team registration image" className="absolute top-0 right-0 w-full -z-10 object-fill rounded-3xl   h-screen " />
        
       </form>
+    
     </main>
   )
 }

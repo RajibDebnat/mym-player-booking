@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "MYM - Player Registration || Player Registration Form",
 
-  description: "A FORM WHERE PLAYERS CAN REGISTER THMESELVES AND JOIN THE VOLLEYBALL TEAM",
+  description: "Game On! You’ve secured your spot. Get ready to serve, spike, and shine",
 };
 
 export default function RootLayout({
