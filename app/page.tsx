@@ -72,7 +72,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         className="bg-transparent rounded-2xl shadow-2xl p-8 max-w-xl w-full space-y-6"
       >
         <h1 className="text-3xl uppercase font-extrabold text-center text-white max-sm:text-xl ">
-         Secured Your Spot
+         Secure Your Spot
         </h1>
 
         <div className="grid grid-cols-1 gap-4">
