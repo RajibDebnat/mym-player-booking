@@ -85,7 +85,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
   Secure Your Spot
 
   {/* Logo 2 */}
-  <div className="relative max-sm:w-14  max-sm:h-14 w-12 h-12 ">
+  <div className="relative max-sm:w-14  max-sm:h-14 w-12 h-12   ">
     <Image
       src="/logo2.png" // Replace with your actual logo path
       alt="Logo 2"
@@ -198,7 +198,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
   </button>
 )}
         <div className="pt-2 border-t mt-0 text-sm">
-          <p className="font-semibold mb-2 text-white">For Support:</p>
+          <p className="font-semibold mb-2 text-black">Contact Support:</p>
           <div>
             <Link href="tel:+919735995321" className="text-black hover:underline flex gap-2" >
              <span className=' text-2xl '><BsTelephoneFill/> </span> <span className='text-lg font-semibold'>Vichar – 97359 95321</span>
