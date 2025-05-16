@@ -7,7 +7,7 @@ import { FaWhatsapp } from 'react-icons/fa'
 import { BsTelephoneFill } from 'react-icons/bs'
 import logo1 from '../public/logo1.webp';
 
-import logo2 from '../public/logo1.webp';
+import logo2 from '../public/logo2.webp';
 
 const roles = [
   "Outside Hitter (Left-side Hitter)",
