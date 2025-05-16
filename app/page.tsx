@@ -65,13 +65,13 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 
 
   return (
-    <main className="min-h-screen overflow-y-clip   bg-[#0f1c2f] flex items-center justify-center p-6  text-white">
+    <main className="min-h-screen overflow-y-clip   bg-transparent flex items-center justify-center p-6  text-white">
       <form
         ref={formRef}
         onSubmit={handleSubmit}
-        className="bg-transparent rounded-2xl shadow-2xl p-8 max-w-xl w-full space-y-6"
+        className="bg-transparent  rounded-2xl shadow-2xl p-8 pt-10 max-w-xl w-full space-y-6"
       >
-        <h1 className="text-3xl uppercase font-extrabold text-center text-white max-sm:text-xl ">
+        <h1 className="text-3xl uppercase font-extrabold text-center  text-white max-sm:text-xl ">
          Secure Your Spot
         </h1>
 
@@ -83,7 +83,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
               value={form.playerName}
               onChange={handleChange}
               required
-              className="w-full px-4 py-2 border border-[#0277ba] rounded-xl"
+              className="w-full px-4 py-2 border text-black  bg-white  border-[#0277ba] rounded-xl"
               placeholder="Enter name"
             />
           </div>
@@ -96,7 +96,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
               value={form.contactNumber}
               onChange={handleChange}
               required
-              className="w-full px-4 py-2 border border-[#0277ba] rounded-xl"
+              className="w-full px-4 py-2 border text-black bg-white border-[#0277ba] rounded-xl"
               placeholder="Enter contact"
             />
           </div>
@@ -108,7 +108,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
               name="role"
               value={form.role}
               onChange={handleChange}
-              className="w-full bg-transparent text-white px-4 py-2 border border-[#0277ba] rounded-xl"
+              className="w-full  bg-white text-black px-4 py-2 border border-[#0277ba] rounded-xl"
             >
               {roles.map((role, idx) => (
                 <option key={idx} className='text-black bg-transparent' value={role}>
@@ -126,11 +126,11 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
               type="date"
               value={form.dateOfJoining}
               onChange={handleChange}
-              className="w-full px-4 py-2 border border-[#0277ba] rounded-xl"
+              className="w-full px-4 py-2  bg-white text-black border border-[#0277ba] rounded-xl"
             />
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 gap-4 ">
             <div>
               <label className="font-semibold">Game</label>
               <input
@@ -138,11 +138,11 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                 name="gameName"
                 value={form.gameName}
                 readOnly
-                className="w-full px-4 py-2 bg-transparent border border-[#0277ba] rounded-xl"
+                className="w-full px-4 py-2  bg-white text-black border border-[#0277ba] rounded-xl"
               />
             </div>
             <div>
-              <label className="font-semibold text-black">Club</label>
+              <label className="font-semibold   ">Club</label>
               <input
                 title='Club'
                 name="clubName"
@@ -190,7 +190,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
             </Link>
           </div>
         </div>
-  <Image src="/bg.webp" width={900} height={900} alt="volleyball   team registration image" className="absolute top-0 right-0 w-full -z-10 object-fill rounded-3xl   h-screen " />
+  <Image src="/bg.webp" width={900} height={900} alt="volleyball   team registration image" className="absolute top-0 right-0 w-full -z-10 object-fill rounded-3xl   h-[110vh] " />
        
       </form>
     
