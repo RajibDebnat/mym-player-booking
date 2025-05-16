@@ -1,103 +1,198 @@
-import Image from "next/image";
+'use client'
+
+import React, { useEffect, useRef, useState } from 'react'
+import gsap from 'gsap'
+import Link from 'next/link'
+import { FaWhatsapp } from 'react-icons/fa'
+import { BsTelephoneFill } from 'react-icons/bs'
+const roles = [
+  "Outside Hitter (Left-side Hitter)",
+  "Opposite Hitter (Right-side Hitter)",
+  "Middle Blocker (Middle Hitter)",
+  "Setter",
+  "Libero",
+  "Defensive Specialist"
+]
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const formRef = useRef<HTMLFormElement>(null)
+  const [submitted, setSubmitted] = useState(false)
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+  const [form, setForm] = useState({
+    playerName: '',
+    contactNumber: '',
+    role: roles[0],
+    dateOfJoining: new Date().toISOString().split('T')[0],
+    gameName: 'Volleyball',
+    clubName: 'MYM',
+  })
+
+  useEffect(() => {
+    gsap.from(formRef.current, {
+      opacity: 0,
+      y: 40,
+      duration: 1.2,
+      ease: 'power3.out',
+    })
+  }, [])
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    setForm({ ...form, [e.target.name]: e.target.value })
+  }
+
+const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+  
+  const formData = { ...form };
+  
+  try {
+    const res = await fetch('/api/sendmail', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
+    
+    const data = await res.json();
+   
+    setSubmitted(true); // optional: to disable button after submit
+  } catch (err) {
+    console.error('Error:', err);
+    alert('Something went wrong');
+  }
+};
+
+
+  return (
+    <main className="min-h-screen bg-[#0f1c2f] flex items-center justify-center p-6 text-[#0f1c2f]">
+      <form
+        ref={formRef}
+        onSubmit={handleSubmit}
+        className="bg-white rounded-2xl shadow-2xl p-8 max-w-xl w-full space-y-6"
+      >
+        <h1 className="text-3xl font-extrabold text-center max-sm:text-xl text-[#0277ba]">
+          Player Registration Form
+        </h1>
+
+        <div className="grid grid-cols-1 gap-4">
+          <div>
+            <label className="font-semibold">Player Name</label>
+            <input
+              name="playerName"
+              value={form.playerName}
+              onChange={handleChange}
+              required
+              className="w-full px-4 py-2 border border-[#0277ba] rounded-xl"
+              placeholder="Enter name"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          </div>
+
+          <div>
+            <label className="font-semibold">Contact Number</label>
+            <input
+              name="contactNumber"
+              type="tel"
+              value={form.contactNumber}
+              onChange={handleChange}
+              required
+              className="w-full px-4 py-2 border border-[#0277ba] rounded-xl"
+              placeholder="Enter contact"
+            />
+          </div>
+
+          <div>
+            <label className="font-semibold">Select Role</label>
+            <select
+            title='Select Role'
+              name="role"
+              value={form.role}
+              onChange={handleChange}
+              className="w-full px-4 py-2 border border-[#0277ba] rounded-xl"
+            >
+              {roles.map((role, idx) => (
+                <option key={idx} value={role}>
+                  {role}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          <div>
+            <label className="font-semibold">Date of Joining</label>
+            <input
+            title='Date of Joining'
+              name="dateOfJoining"
+              type="date"
+              value={form.dateOfJoining}
+              onChange={handleChange}
+              className="w-full px-4 py-2 border border-[#0277ba] rounded-xl"
+            />
+          </div>
+
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <label className="font-semibold">Game</label>
+              <input
+                title='Game'
+                name="gameName"
+                value={form.gameName}
+                readOnly
+                className="w-full px-4 py-2 bg-gray-100 border border-[#0277ba] rounded-xl"
+              />
+            </div>
+            <div>
+              <label className="font-semibold">Club</label>
+              <input
+                title='Club'
+                name="clubName"
+                value={form.clubName}
+                readOnly
+                className="w-full px-4 py-2 bg-gray-100 border border-[#0277ba] rounded-xl"
+              />
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+{submitted ? (
+ <div className=' flex justify-center items-center gap-4 flex-col'>
+
+ <a
+    href="https://chat.whatsapp.com/IpgglZSy6FE80nxib3mYTP"
+    target="_blank"
+    rel="noopener noreferrer"
+    className=" flex justify-center flex-col items-center bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-xl transition duration-300 text-center"
+    >
+  <span className=' text-2xl gap-4'><FaWhatsapp/></span> <span>Join MYM Group</span> 
+  </a>
+  <p className=' font-semibold max-sm:text-sm text-center text-lg text-green-500'>Form Submited Successfully</p>
     </div>
-  );
+) : (
+  <button
+    type="submit"
+    disabled={submitted}
+    className={`w-full ${
+      submitted ? 'bg-gray-400 cursor-not-allowed' : 'bg-[#c09c06] hover:bg-yellow-600'
+    } text-white font-bold py-2 rounded-xl`}
+  >
+    Book Now
+  </button>
+)}
+        <div className="pt-4 border-t mt-6 text-sm">
+          <p className="font-semibold mb-2 text-[#0277ba]">For Help:</p>
+          <div>
+            <Link href="tel:+919735995321" className="text-[#0f1c2f] hover:underline flex gap-2" >
+             <span className=' text-2xl '><BsTelephoneFill/> </span> <span className='text-lg font-semibold'>Vichar – 97359 95321</span>
+            
+            </Link>
+            <br />
+            <Link href="tel:+917551037762" className="text-[#0f1c2f] hover:underline flex gap-2">
+              <span className=' text-2xl'><BsTelephoneFill/> </span > <span className=' text-lg font-semibold'> Lokesh – 75510 37762</span> 
+            </Link>
+          </div>
+        </div>
+
+       
+      </form>
+    </main>
+  )
 }
