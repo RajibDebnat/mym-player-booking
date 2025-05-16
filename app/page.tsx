@@ -193,7 +193,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
        
       </form>
   <Image src="/bg.jpg" width={900} height={900} alt="volleyball   team registration image" className="absolute top-0 right-0 w-full -z-10 object-fill    h-[120vh] " />
-  <Image src="/logo2.png" width={150} height={150} alt="volleyball   team registration image" className="absolute   top-4 left-6 " />
+  <Image src="/logo2.png" width={150} height={150} alt="volleyball   team registration image" className="absolute   top-4 left-6   max-sm:hidden" />
     
     </main>
   )
